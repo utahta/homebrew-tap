@@ -1,0 +1,30 @@
+name: audit
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Homebrew only audits casks it can see as a tap, so the checkout is
+      # linked into place as one.
+      - name: Link the checkout as a tap
+        run: |
+          TAP="$(brew --repository)/Library/Taps/utahta/homebrew-tap"
+          mkdir -p "$(dirname "$TAP")"
+          ln -s "$GITHUB_WORKSPACE" "$TAP"
+
+      - name: Style
+        run: brew style utahta/tap
+
+      # No --online: that would fetch the release asset, which is out of reach
+      # while the app's repository is private. Syntax, style and the shape of
+      # the cask are what this catches — a URL that has gone missing is caught
+      # by anyone running brew install.
+      - name: Audit
+        run: brew audit --cask --strict utahta/tap/kikiyaku
