@@ -1,6 +1,6 @@
 cask "kikiyaku" do
-  version "0.4.0"
-  sha256 "014513534b7cb3a84869a25f69894c5b71bd067f655294fb840ccf4fe3a6020e"
+  version "0.5.0"
+  sha256 "9088dbf886aa6bce9b9444b1df28163e3ddf1fe359cc4517c75871558cb7a3a8"
 
   url "https://github.com/utahta/kikiyaku/releases/download/v#{version}/Kikiyaku_v#{version}_macos_arm64.zip"
   name "Kikiyaku"
