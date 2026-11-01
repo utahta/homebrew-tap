@@ -19,6 +19,10 @@ jobs:
           mkdir -p "$(dirname "$TAP")"
           ln -s "$GITHUB_WORKSPACE" "$TAP"
 
+      # Homebrew 6 and later ignore casks from taps that are not trusted.
+      - name: Trust the tap
+        run: brew trust utahta/tap
+
       - name: Style
         run: brew style utahta/tap
 
@@ -27,4 +31,4 @@ jobs:
       # the cask are what this catches — a URL that has gone missing is caught
       # by anyone running brew install.
       - name: Audit
-        run: brew audit --cask --strict utahta/tap/kikiyaku
+        run: brew audit --cask --strict utahta/tap/kikiyaku utahta/tap/mailonly
