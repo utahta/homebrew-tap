@@ -1,6 +1,6 @@
 cask "mailonly" do
-  version "0.1.0"
-  sha256 "4ab06cc6dbc68d368d7b41c249722b0e8391a85681212a957fa6978e5dc024b3"
+  version "0.2.0"
+  sha256 "87e56c29e88b7916c729f17fae1e5d63a873a4e69ffb8435d6a2d3846eb22b58"
 
   url "https://github.com/utahta/mailonly/releases/download/v#{version}/mailonly-#{version}-arm64-mac.zip"
   name "mailonly"
