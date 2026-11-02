@@ -1,6 +1,6 @@
 cask "ouchimail" do
-  version "0.3.0"
-  sha256 "b93ad3f504406f4580d128636686917a9687794271201a7f6b10c0edd603e26c"
+  version "0.4.0"
+  sha256 "bdef99a2b5873dca54b9d0a105c5b9d6415b8acb24ce4a28e89185e58cf490da"
 
   url "https://github.com/utahta/ouchimail/releases/download/v#{version}/ouchimail-#{version}-arm64-mac.zip"
   name "ouchimail"
