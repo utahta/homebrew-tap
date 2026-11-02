@@ -31,4 +31,4 @@ jobs:
       # the cask are what this catches — a URL that has gone missing is caught
       # by anyone running brew install.
       - name: Audit
-        run: brew audit --cask --strict utahta/tap/kikiyaku utahta/tap/mailonly
+        run: brew audit --cask --strict utahta/tap/kikiyaku utahta/tap/ouchimail
